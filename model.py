@@ -154,7 +154,7 @@ def build_model():
         model =  torchvision.models.squeezenet1_1(pretrained=True)
         model.to(device=device) 
         model = torch.nn.DataParallel(model)  
-    elif args.model == 'EfficientNet':
+    elif args.model == 'EfficientNetTest':
         model = EfficientNet.from_pretrained('efficientnet-b4')
         model.classifier = torch.nn.Sequential(
             torch.nn.Linear(in_features=1792, out_features=625), # 1792 is the original in_features
