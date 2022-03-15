@@ -127,7 +127,7 @@ def build_model():
     device = torch.device("cuda" if use_cuda else "cpu")
 
     # -- model
-    if args.model == 'GoogleNet':
+    if args.model == 'GoogleNetTest':
         model =  torchvision.models.googlenet(pretrained=True)
         model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
         model.to(device=device) 
