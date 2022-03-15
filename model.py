@@ -150,7 +150,7 @@ def build_model():
             block = DarkResidualBlock
         ).to(device)
         model = torch.nn.DataParallel(model)
-    elif args.model == 'SqueezeNet1':
+    elif args.model == 'SqueezeNet10':
         model =  torchvision.models.squeezenet1_1(pretrained=True)
         model.to(device=device) 
         model = torch.nn.DataParallel(model)  
